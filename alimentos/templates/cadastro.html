@@ -71,4 +71,41 @@
     </form>
 </div>
 
+<div class="row">
+    <div class="col-8">
+        <h2 class="titulo">Lista de Alimentos</h2>
+        <hr>
+        <table class="table table-striped table-dark">
+            <tr>
+                <td>ID</td>
+                <td>Nome Produto</td>
+                <td>Validade</td>
+                <td>Peso</td>
+                <td>Preço</td>
+                <td>Qtd em Estoque</td>
+                <td>País de Origem</td>
+                <td>Fornecedor</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            {% for alimentos in alimento %}
+            <tr>
+                <td>{{ alimentos._id}}</td>
+                <td>{{ alimentos.nome_produto}}</td>
+                <td>{{ alimentos.validade}}</td>
+                <td>Kg {{ alimentos.peso_produto}}</td>
+                <td>R$ {{ alimentos.preco}}</td>
+                <td>{{ alimentos.quantidade}}</td>
+                <td>{{ alimentos.pais_origem}}</td>
+                <td>{{ alimentos.fornecedor}}</td>
+                <td><a href="/atualizar/{{alimentos._id }}" ><span><i class="fas fa-edit"></i></span>Atualizar</a></td>
+                <td><a href="/excluir/{{ alimentos._id }}" ><span><i class="fas fa-trash-alt"></i></span>Deletar</a></td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+</div>
+
 {% endblock main %} 

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block menu %}
+
+{% endblock menu %}
+
+{% block main %}
+
+<h2 class="titulo" >Atualizar</h2>
+<hr>
+<form action="" method="POST">
+    <table>
+        <tr>
+            <td>Nome do Alimento</td>
+            <td><input type="text" name="nome_produto" value="{{ alimento.nome_produto}}"></td>
+        </tr>
+        <tr>
+            <td>Validade</td>
+            <td><input type="text" name="validade" value="{{ alimento.validade }}"></td>
+        </tr>
+        <tr>
+            <td>Peso</td>
+            <td><input type="text" name="peso_produto" value="{{ alimento.peso_produto }}"></td>
+        </tr>
+        <tr>
+            <td>Preço</td>
+            <td><input type="text" name="preco" value="{{ alimento.preco }}"></td>
+        </tr>
+        <tr>
+            <td>Qtd Estoque</td>
+            <td><input type="text" name="quantidade" value="{{ alimento.quantidade }}"></td>
+        </tr>
+        <tr>
+            <td>País de Origem</td>
+            <td><input type="text" name="pais_origem" value="{{ alimento.pais_origem }}"></td>
+        </tr>
+        <tr>
+            <td>Fornecedor</td>
+            <td><input type="text" name="fornecedor" value="{{ alimento.fornecedor }}"></td>
+        </tr>
+    </table><br>
+    <input type="submit" class="btn btn-dark" value="Atualizar" class="enviar" >
+</form>
+<br>
+<a href="/" class="btn btn-dark butaozin">Inicio</a>
+
+{% endblock main %}
