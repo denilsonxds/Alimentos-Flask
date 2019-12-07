@@ -1,44 +1,86 @@
 {% extends "base.html" %}
 
+{% block menu %}
+
+{% endblock menu %}
 
 {% block main %}
-<div class="col-md-4 col-md-offset-6">
-    <form action="{{ url_for("cadastro") }}" method="POST">
-        <table>
-            <div class="form-group">
-            <tr>
-                <td>Nome do Alimento</td>
-                <td><input type="text" name="nome_produto"></td>
-            </tr>
-            <tr>
-                <td>Validade</td>
-                <td><input type="text" name="validade"></td>
-            </tr>
-            <tr>
-                <td>Peso</td>
-                <td><input type="text" name="peso_produto"></td>
-            </tr>
-            <tr>
-                <td>Preço</td>
-                <td><input type="text" name="preco"></td>
-            </tr>
-            <tr>
-                <td>Qtd Estoque</td>
-                <td><input type="text" name="quantidade"></td>
-            </tr>
-            <tr>
-                <td>País de Origem</td>
-                <td><input type="text" name="pais_origem"></td>
-            </tr>
-            <tr>
-                <td>Fornecedor</td>
-                <td><input type="text" name="fornecedor"></td>
-            </tr>
-            </div>
-        </table><br>
-        <input class="btn btn-dark" type="submit" value="Cadastrar" class="enviar">
-    </form>
 
+<div class="row">
+    <div class="col-4">
+        <br>
+        <h2>Cadastro de Alimentos</h2>
+        <form action="{{ url_for("cadastro") }}" method="POST">
+            <table>
+                <div class="form-group">
+                <tr>
+                    <td><p>Nome do Alimento</p></td>
+                    <td><input type="text" name="nome_produto"></td>
+                </tr>
+                <tr>
+                    <td><p>Validade</p></td>
+                    <td><input type="text" name="validade"></td>
+                </tr>
+                <tr>
+                    <td><p>Peso</p></td>
+                    <td><input type="text" name="peso_produto"></td>
+                </tr>
+                <tr>
+                    <td><p>Preço</p></td>
+                    <td><input type="text" name="preco"></td>
+                </tr>
+                <tr>
+                    <td><p>Qtd Estoque</p></td>
+                    <td><input type="text" name="quantidade"></td>
+                </tr>
+                <tr>
+                    <td><p>País de Origem</p></td>
+                    <td><input type="text" name="pais_origem"></td>
+                </tr>
+                <tr>
+                    <td><p>Fornecedor</p></td>
+                    <td><input type="text" name="fornecedor"></td>
+                </tr>
+                </div>
+            </table><br>
+            <input class="btn btn-success" type="submit" value="Cadastrar" class="enviar">
+        </form>
+    </div>
+
+
+    <div class="col-8">
+        <h2 class="titulo">Lista de Alimentos</h2>
+        <hr>
+        <table class="table table-striped table-dark">
+        <tr>
+            <td>ID</td>
+            <td>Nome Produto</td>
+            <td>Validade</td>
+            <td>Peso</td>
+            <td>Preço</td>
+            <td>Qtd em Estoque</td>
+            <td>País de Origem</td>
+            <td>Fornecedor</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        {% for alimentos in alimento %}
+        <tr>
+            <td>{{ alimentos._id}}</td>
+            <td>{{ alimentos.nome_produto}}</td>
+            <td>{{ alimentos.validade}}</td>
+            <td>Kg {{ alimentos.peso_produto}}</td>
+            <td>R$ {{ alimentos.preco}}</td>
+            <td>{{ alimentos.quantidade}}</td>
+            <td>{{ alimentos.pais_origem}}</td>
+            <td>{{ alimentos.fornecedor}}</td>
+            <td><a href="/atualizar/{{alimentos._id }}" ><span><i class="fas fa-edit"></i></span>Atualizar</a></td>
+            <td><a href="/excluir/{{ alimentos._id }}" ><span><i class="fas fa-trash-alt"></i></span>Deletar</a></td>
+        </tr>
+        {% endfor %}
+
+        </table>
+    </div>
 </div>
-
 {% endblock main %} 

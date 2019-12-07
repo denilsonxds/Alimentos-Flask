@@ -1,40 +1,13 @@
 {% extends "base.html" %}
 
 {% block menu %}
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link" href="#
-            ">Home</a>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Roupas</a>
-            <div class="dropdown-menu">
-
-                <a class="dropdown-item" href="#">Roupas</a>
-                <a class="dropdown-item" href="#">Marca da Roupa</a>
-                <a class="dropdown-item" href="#">Tipo de Roupa</a>
-                <a class="dropdown-item" href="#">Sessão da Roupa</a>
-
-
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cadastro</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Clientes</a>
-                
-                <a class="dropdown-item" href="#">Funcionarios</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Aluguel</a>
-                <a class="dropdown-item" href="#">Taxas</a>
-            </div>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="#">Locação</a>
-        </li>
-    </ul>
+    	<ul class="navbar navbar-tabs navbar-fill bg-dark">
+  		<li class="nav-item">
+  			<a href="{{ url_for('cadastrar')}}">Novo Imóvel</a>
+  		</li>
+  		<li class="nav-item">
+  		    <a href="{{ url_for('lista')}}">Consultar Imóveis</a>
+  		</li>
+        </ul>
 {% endblock menu %}
 
