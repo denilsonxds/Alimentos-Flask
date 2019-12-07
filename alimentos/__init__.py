@@ -14,6 +14,7 @@ migrate = Migrate(app, db)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
+from alimentos.models import tables, forms
 from alimentos.controllers import default
 
 

@@ -1,17 +1,40 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ url_for('static', filename="css/bootstrap.min.css") }}">
+{% extends "base.html" %}
 
-    <title>Sistema de Alimentos</title>
-</head>
-<body>
-    <h1>Inicial</h1>
-    <h1>Cadastro de Clientes</h1>
+{% block menu %}
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="#
+            ">Home</a>
+        </li>
 
-    <script src="{{ url_for('static', filename="js/bootstrap.min.js") }}"></script>
-</body>
-</html>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Roupas</a>
+            <div class="dropdown-menu">
+
+                <a class="dropdown-item" href="#">Roupas</a>
+                <a class="dropdown-item" href="#">Marca da Roupa</a>
+                <a class="dropdown-item" href="#">Tipo de Roupa</a>
+                <a class="dropdown-item" href="#">Sessão da Roupa</a>
+
+
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cadastro</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Clientes</a>
+                
+                <a class="dropdown-item" href="#">Funcionarios</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Aluguel</a>
+                <a class="dropdown-item" href="#">Taxas</a>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">Locação</a>
+        </li>
+    </ul>
+{% endblock menu %}
+
