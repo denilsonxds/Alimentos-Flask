@@ -6,42 +6,64 @@
 
 {% block main %}
 
-<h2 class="titulo" >Atualizar</h2>
-<hr>
-<form action="" method="POST">
-    <table>
-        <tr>
-            <td>Nome do Alimento</td>
-            <td><input type="text" name="nome_produto" value="{{ alimento.nome_produto}}"></td>
-        </tr>
-        <tr>
-            <td>Validade</td>
-            <td><input type="text" name="validade" value="{{ alimento.validade }}"></td>
-        </tr>
-        <tr>
-            <td>Peso</td>
-            <td><input type="text" name="peso_produto" value="{{ alimento.peso_produto }}"></td>
-        </tr>
-        <tr>
-            <td>Preço</td>
-            <td><input type="text" name="preco" value="{{ alimento.preco }}"></td>
-        </tr>
-        <tr>
-            <td>Qtd Estoque</td>
-            <td><input type="text" name="quantidade" value="{{ alimento.quantidade }}"></td>
-        </tr>
-        <tr>
-            <td>País de Origem</td>
-            <td><input type="text" name="pais_origem" value="{{ alimento.pais_origem }}"></td>
-        </tr>
-        <tr>
-            <td>Fornecedor</td>
-            <td><input type="text" name="fornecedor" value="{{ alimento.fornecedor }}"></td>
-        </tr>
-    </table><br>
-    <input type="submit" class="btn btn-dark" value="Atualizar" class="enviar" >
-</form>
-<br>
-<a href="/" class="btn btn-dark butaozin">Inicio</a>
+<div class="container" style="margin-top: 10%;">
+    <h1 style="text-align: center;"><em>Atualizar</em></h1>
+    <form action="" method="POST">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Nome do Alimento:</label>
+                    <input type="text" class="form-control" value="{{ alimento.nome_produto}}" name="nome_produto">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Validade:</label>
+                    <input type="text" class="form-control" value="{{ alimento.validade }}" name="validade">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Peso:</label>
+                    <input type="text" class="form-control" value="{{ alimento.peso_produto }}" name="peso_produto">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Preço:</label>
+                    <input type="text" class="form-control" value="{{ alimento.preco }}" name="preco">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Qtd Estoque:</label>
+                    <input type="text" class="form-control" value="{{ alimento.quantidade }}" name="quantidade">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">País de Origem:</label>
+                    <input type="text" class="form-control" value="{{ alimento.pais_origem }}" name="pais_origem">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Fornecedor:</label>
+                    <input type="text" class="form-control" value="{{ alimento.fornecedor }}" name="fornecedor">
+                </div>
+            </div>
+        </div>
+        <div style="margin: 10px 0px 10px 0px;">
+            <input class="btn btn-dark" type="submit" value="Atualizar" class="enviar">
+        </div>
+    </form>
+    <a href="/home" class="btn btn-dark butaozin">Inicio</a>
+</div>
 
 {% endblock main %}
